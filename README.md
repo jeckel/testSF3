@@ -19,3 +19,8 @@ $ php bin/console server:run
 Open the url : `http://localhost:8000/status/`
 
 Add or remove the `redis.running` and `mysql.running` files, and check the updated json reponse from the API.
+
+## Tests
+
+- Controller unit test : [StatusControllerUnitTest.php](tests/AppBundle/Controller/StatusControllerUnitTest.php)
+- Controller functional test : [StatusControllerTest.php](tests/AppBundle/Controller/StatusControllerTest.php)

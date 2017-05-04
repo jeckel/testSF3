@@ -22,12 +22,12 @@ class RedisStatus implements StatusInterface
     protected $root_dir;
 
     /**
-     * RedisStatus constructor.
-     * @param string $root_dir
+     * MysqlStatus constructor.
+     * @param \AppKernel $kernel
      */
-    public function __construct(string $root_dir)
+    public function __construct(\AppKernel $kernel)
     {
-        $this->root_dir = $root_dir . '/../var/';
+        $this->root_dir = $kernel->getRootDir() . '/../var/';
     }
 
     /**

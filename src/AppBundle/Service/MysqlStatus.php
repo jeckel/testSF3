@@ -22,11 +22,11 @@ class MysqlStatus implements StatusInterface
 
     /**
      * MysqlStatus constructor.
-     * @param string $root_dir
+     * @param \AppKernel $kernel
      */
-    public function __construct(string $root_dir)
+    public function __construct(\AppKernel $kernel)
     {
-        $this->root_dir = $root_dir . '/../var/';
+        $this->root_dir = $kernel->getRootDir() . '/../var/';
     }
 
     /**
