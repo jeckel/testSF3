@@ -9,6 +9,7 @@ services:
     #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
     mysql.status:
         class: AppBundle\Service\MysqlStatus
-        arguments: ['@doctrine']
+        arguments: [%kernel.root_dir%]
     redis.status:
         class: AppBundle\Service\RedisStatus
+        arguments: [%kernel.root_dir%]

@@ -8,16 +8,25 @@
 
 namespace AppBundle\Service;
 
-
-use Doctrine\Bundle\DoctrineBundle\Registry;
-
 class MysqlStatus implements StatusInterface
 {
-    protected $doctrine;
+    /**
+     * Name of file use to check if MySQL is running, file exist = mysql is running
+     */
+    const FILE_NAME = 'mysql.running';
 
-    public function __construct(Registry $doctrine)
+    /**
+     * @var string
+     */
+    protected $root_dir;
+
+    /**
+     * MysqlStatus constructor.
+     * @param string $root_dir
+     */
+    public function __construct(string $root_dir)
     {
-        $this->doctrine = $doctrine;
+        $this->root_dir = $root_dir . '/../var/';
     }
 
     /**
@@ -25,6 +34,6 @@ class MysqlStatus implements StatusInterface
      */
     public function getStatus(): bool
     {
-        return false;
+        return file_exists($this->root_dir . self::FILE_NAME);
     }
 }
