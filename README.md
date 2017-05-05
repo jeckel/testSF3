@@ -24,3 +24,4 @@ Add or remove the `redis.running` and `mysql.running` files, and check the updat
 
 - Controller unit test : [StatusControllerUnitTest.php](tests/AppBundle/Controller/StatusControllerUnitTest.php)
 - Controller functional test : [StatusControllerTest.php](tests/AppBundle/Controller/StatusControllerTest.php)
+- Test with Behat : [status.feature](features/status.feature)
